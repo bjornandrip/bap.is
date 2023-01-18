@@ -1,6 +1,7 @@
 body {
   padding: 0;
   margin: 0;
+  font-family: 'Aclonica';font-size: 22px;
 }
 .content {
   --positionX: 0;
@@ -14,10 +15,30 @@ body {
 }
 .container{
   display: grid;
-  grid-template: repeat(3, 1fr) / repeat(7, 1fr);
+  grid-template: repeat(3, 1fr) / repeat(9, 1fr);
   height: 100vh;
   background-color:cadetblue;
 }
+.gridLinks{
+  font-size: xx-large;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+a{
+  color: inherit;
+}
+.gridLinks:hover{
+  background-image: url(../resources/dawg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
 
 .cell{
   width: 100%;
@@ -45,7 +66,8 @@ body {
   content: " ";
   position: absolute;
   top: 50.5%;
-  left: 52.17%;
+  // right: calc(49.9% - 5vh);
+  left: calc(49.9% + 5vh);
   transform: translate(-50%, -50%);
   transition: transform 0.5s;
   background: black;
@@ -57,89 +79,27 @@ body {
   content: " ";
   position: absolute;
   top: 50.50%;
-  left: 48.43%;
+  // left: 48.43%;
+  left: calc(49.9% - 3.2vh);
   transform: translate(-50%, -50%);
   transition: transform 0.5s;
   background: black;
 }
-.cell:nth-child(1):hover ~ .girl .blackDotRight:before,.cell:nth-child(1):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-160%, -150%);
-}
-.cell:nth-child(2):hover ~ .girl .blackDotRight:before,.cell:nth-child(2):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-140%, -150%);
-}
-.cell:nth-child(3):hover ~ .girl .blackDotRight:before,.cell:nth-child(3):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-90%, -150%);
-}
-.cell:nth-child(4):hover ~ .girl .blackDotRight:before,.cell:nth-child(4):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-50%, -150%);
-}
-.cell:nth-child(5):hover ~ .girl .blackDotRight:before,.cell:nth-child(5):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-10%, -150%);
-}
-.cell:nth-child(6):hover ~ .girl .blackDotRight:before,.cell:nth-child(6):hover ~ .girl .blackDotLeft:before{
-  transform: translate(40%, -150%);
-}
-.cell:nth-child(7):hover ~ .girl .blackDotRight:before,.cell:nth-child(7):hover ~ .girl .blackDotLeft:before{
-  transform: translate(60%, -150%);
-}
-.cell:nth-child(8):hover ~ .girl .blackDotRight:before,.cell:nth-child(8):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-150%, -50%);
-}
-.cell:nth-child(9):hover ~ .girl .blackDotRight:before,.cell:nth-child(9):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-150%, -50%);
-}
-.cell:nth-child(10):hover ~ .girl .blackDotRight:before,.cell:nth-child(10):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-150%, -50%);
-}
-.cell:nth-child(11):hover ~ .girl .blackDotRight:before,.cell:nth-child(11):hover ~ .girl .blackDotLeft:before{
+.cell:nth-child(14):hover ~ .girl .blackDotRight:before,.cell:nth-child(14):hover ~ .girl .blackDotLeft:before{
   width: 2vmin;
   height: 2vmin;
   border-radius: 100%;
 }
-.cell:nth-child(12):hover ~ .girl .blackDotRight:before,.cell:nth-child(12):hover ~ .girl .blackDotLeft:before{
-  transform: translate(150%, -50%);
-}
-.cell:nth-child(13):hover ~ .girl .blackDotRight:before,.cell:nth-child(13):hover ~ .girl .blackDotLeft:before{
-  transform: translate(150%, -50%);
-}
-.cell:nth-child(14):hover ~ .girl .blackDotRight:before,.cell:nth-child(14):hover ~ .girl .blackDotLeft:before{
-  transform: translate(150%, -50%);
-}
-.cell:nth-child(15):hover ~ .girl .blackDotRight:before,.cell:nth-child(15):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-160%, 150%);
-}
-.cell:nth-child(16):hover ~ .girl .blackDotRight:before,.cell:nth-child(16):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-140%, 150%);
-}
-.cell:nth-child(17):hover ~ .girl .blackDotRight:before,.cell:nth-child(17):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-90%, 150%);
-}
-.cell:nth-child(18):hover ~ .girl .blackDotRight:before,.cell:nth-child(18):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-50%, 150%);
-}
-.cell:nth-child(19):hover ~ .girl .blackDotRight:before,.cell:nth-child(19):hover ~ .girl .blackDotLeft:before{
-  transform: translate(-10%, 150%);
-}
-.cell:nth-child(20):hover ~ .girl .blackDotRight:before,.cell:nth-child(20):hover ~ .girl .blackDotLeft:before{
-  transform: translate(40%, 150%);
-}
-.cell:nth-child(21):hover ~ .girl .blackDotRight:before,.cell:nth-child(21):hover ~ .girl .blackDotLeft:before{
-  transform: translate(60%, 150%);
-}
-// .cell:nth-child(42):hover ~ .content {
-//   --positionX: 1;
-//   --positionY: 3;
-// }
-// @for $i from 0 to 10 {
-//   .cell:nth-child(10n + #{$i + 1}):hover ~ .content {
-//      --positionX: #{$i};
-//    }
-//    .cell:nth-child(n + #{10 * $i + 1}):nth-child(-n + #{10 * ($i + 1)}):hover ~ .content {
-//      --positionY: #{$i};
-//    }
-//  }
-//  .square {
-//   width: calc(100px + var(--positionX) * 20px);
-//   height: calc(100px + var(--positionY) * 20px);
-// }
+
+@for $i from 0 to 9 {
+  .cell:nth-child(#{1+$i}):hover ~ .girl .blackDotRight:before,.cell:nth-child(#{1+$i}):hover ~ .girl .blackDotLeft:before{
+    transform: translate(#{-150%+$i*25}, -150%);
+  }
+  .cell:nth-child(#{19+$i}):hover ~ .girl .blackDotRight:before,.cell:nth-child(#{19+$i}):hover ~ .girl .blackDotLeft:before{
+      transform: translate(#{-150%+$i*33.33333333}, 150%);
+  }
+  .cell:nth-child(#{10+$i}):hover ~ .girl .blackDotRight:before,.cell:nth-child(#{10+$i}):hover ~ .girl .blackDotLeft:before{
+    transform: translate(#{-150%+$i*25}, -50%);
+  }
+
+   }
